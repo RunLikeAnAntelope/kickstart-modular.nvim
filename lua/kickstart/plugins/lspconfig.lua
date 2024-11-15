@@ -1,4 +1,4 @@
--- LSP Plugins
+-- LSP Pluginsls
 return {
   {
     -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
@@ -166,7 +166,17 @@ return {
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        clangd = {},
+        clangd = {
+          cmd = {
+            'clangd',
+            '--clang-tidy',
+            '--header-insertion=iwyu',
+            '--completion-style=detailed',
+            '--function-arg-placeholders',
+            '--fallback-style=llvm',
+            '--compile-commands-dir=build',
+          },
+        },
         ocamllsp = {},
         -- gopls = {},
         -- pyright = {},
