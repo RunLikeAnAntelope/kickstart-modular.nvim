@@ -25,6 +25,7 @@ return {
         cpp = { 'clang-format' },
         hpp = { 'clang-format' },
         h = { 'clang-format' },
+        ml = { 'ocamlformat' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
